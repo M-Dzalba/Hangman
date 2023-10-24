@@ -22,13 +22,18 @@ public class Game {
         while(isGame){
             System.out.println("Enter any character: ");
             char ch=scanner.nextLine().charAt(0);
-
-            if(!enteredLetters.contains(ch)){
-                enteredLetters.add(ch);
+            if(Character.isLetter(ch)){
+                if(!enteredLetters.contains(ch)){
+                    enteredLetters.add(ch);
+                }else{
+                    System.out.println("You used this letter before!");
+                    continue;
+                }
             }else{
-                System.out.println("You used this letter before!");
+                System.out.println("Please, enter a character!");
                 continue;
             }
+
             checkLetter(ch,word);
             if((wordLength==0)&&(mistakes<6)){
                 DrawGame.youWon(word);
