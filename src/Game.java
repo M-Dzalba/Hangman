@@ -1,28 +1,25 @@
 
-
 import java.util.LinkedHashSet;
 import java.util.Scanner;
 
 
-public class WordForGame {
-
-
+public class Game {
     static int wordLength;
     static int mistakes;
     static String secretWordView;
     static LinkedHashSet<Character> enteredLetters;
-    public static void maskedWord(String word){
-
+    static boolean isGame;
+    public static void startGame(String word){
+        isGame=true;
         secretWordView="*".repeat(word.length());
         System.out.println("secretWord: "+"          "+word);
-        System.out.println("secretWordView: "+"      "+secretWordView);
+        System.out.println("Guess the hidden word: "+"      "+secretWordView);
         mistakes=0;
         enteredLetters = new LinkedHashSet<>();
-
         wordLength=word.length();
         Scanner scanner=new Scanner(System.in);
 
-        while((wordLength>0)){
+        while(isGame){
             System.out.println("Enter any character: ");
             char ch=scanner.nextLine().charAt(0);
 
@@ -32,19 +29,13 @@ public class WordForGame {
                 System.out.println("You used this letter before!");
                 continue;
             }
-
-
-
             checkLetter(ch,word);
-
-            DrawGame.drawGameMenu();
+            if((wordLength==0)&&(mistakes<6)){
+                DrawGame.youWon(word);
+                isGame=false;
+            }else DrawGame.drawGameMenu();
         }
-
-
-
     }
-
-
     public static void checkLetter(char ch,String word){
         if(word.contains(String.valueOf(ch))){
             char[] temp=word.toCharArray();
@@ -62,13 +53,12 @@ public class WordForGame {
             mistakes++;
             if(mistakes==6){
                 StagesOfHangman.drawHangman(mistakes);
-                System.out.println("You lost!");
+                DrawGame.youLost(word);
+                isGame=false;
 
             }
         }
     }
-
-
 }
 
 

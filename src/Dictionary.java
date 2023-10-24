@@ -8,11 +8,9 @@ import java.util.Random;
 public class Dictionary {
     private final String pathFile="dictionary.txt";
     private List<String>listWords;
-
     public Dictionary() {
         loadListWordsFromFile();
     }
-
     private void loadListWordsFromFile() {
         InputStream resource = this.getClass().getClassLoader().getResourceAsStream(pathFile);
         if (resource == null) {
@@ -20,7 +18,6 @@ public class Dictionary {
         }
         listWords = new BufferedReader(new InputStreamReader(resource)).lines().toList();
     }
-
     protected String getRandomWordFromList() {
         final int minWordLength = 5;
         final int maxWordLength = 10;
@@ -30,6 +27,5 @@ public class Dictionary {
         }
         return word;
     }
-
 
 }
