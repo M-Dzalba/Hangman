@@ -12,7 +12,7 @@ public class Game {
     public static void startGame(String word){
         isGame=true;
         secretWordView="*".repeat(word.length());
-        System.out.println("secretWord: "+"          "+word);
+        //System.out.println("secretWord: "+"          "+word); //quick debug
         System.out.println("Guess the hidden word: "+"      "+secretWordView);
         mistakes=0;
         enteredLetters = new LinkedHashSet<>();
