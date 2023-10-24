@@ -1,0 +1,11 @@
+arcade
+approach
+apple
+function
+dictionary
+computer
+television
+kitchen
+cucumber
+operator
+commander

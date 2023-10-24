@@ -1,7 +1,7 @@
 public class StagesOfHangman {
 public static void drawHangman(int num){
     switch (num){
-        case 1:
+        case 0:
             System.out.println("    +---+\n" +
                     "    |   |\n" +
                     "    |\n" +
@@ -10,11 +10,20 @@ public static void drawHangman(int num){
                     "    |\n" +
                     "    =========");
             break;
-        case 2:  //first mistake
+        case 1:  //first mistake
             System.out.println("    +---+\n" +
                     "    |   |\n" +
                     "    |   O\n" +
                     "    |\n" +
+                    "    |\n" +
+                    "    |\n" +
+                    "    =========");
+            break;
+        case 2:
+            System.out.println("    +---+\n" +
+                    "    |   |\n" +
+                    "    |   O\n" +
+                    "    |   |\n" +
                     "    |\n" +
                     "    |\n" +
                     "    =========");
@@ -23,7 +32,7 @@ public static void drawHangman(int num){
             System.out.println("    +---+\n" +
                     "    |   |\n" +
                     "    |   O\n" +
-                    "    |   |\n" +
+                    "    |  /|\n" +
                     "    |\n" +
                     "    |\n" +
                     "    =========");
@@ -32,7 +41,7 @@ public static void drawHangman(int num){
             System.out.println("    +---+\n" +
                     "    |   |\n" +
                     "    |   O\n" +
-                    "    |  /|\n" +
+                    "    |  /|\\\n" +
                     "    |\n" +
                     "    |\n" +
                     "    =========");
@@ -42,20 +51,11 @@ public static void drawHangman(int num){
                     "    |   |\n" +
                     "    |   O\n" +
                     "    |  /|\\\n" +
-                    "    |\n" +
-                    "    |\n" +
-                    "    =========");
-            break;
-        case 6:
-            System.out.println("    +---+\n" +
-                    "    |   |\n" +
-                    "    |   O\n" +
-                    "    |  /|\\\n" +
                     "    |  /\n" +
                     "    |\n" +
                     "    =========");
             break;
-        case 7:
+        case 6:
             System.out.println("    +---+\n" +
                     "    |   |\n" +
                     "    |   O\n" +
